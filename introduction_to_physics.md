@@ -40,21 +40,49 @@ LDMX aims to detect these by reconstructing the recoil electron and identifying 
 
 ## Cross Section Computation
 
-The analytical expression for the dark photon production cross section σ is derived from the Weizsäcker-Williams approximation:
+The analytical expression for the dark photon production cross section $\sigma$ is derived from the Weizsäcker-Williams approximation:
 
 $$
-\sigma \propto \frac{\alpha^3 \epsilon^2 \beta}{m_{A'}^2} \cdot \chi \cdot \left[\log(\delta^{-1}) + O(1)\right]
+\sigma \propto \frac{\alpha^3 \epsilon^2 \beta}{m_{A'}^2} \cdot \chi \cdot \left[\log\left(\delta^{-1}\right) + \mathcal{O}(1)\right]
 $$
 
 Where:
 
-* $\epsilon$ is the kinetic mixing parameter
-* $m_{A'}$ is the dark photon mass
-* $\beta = \sqrt{1 - (m_{A'}/E_0)^2}$
-* $\delta \sim \max(m_{A'}/E_0, m_e^2/m_{A'}^2, m_e/E_0)$
-* $\chi = \chi_{\text{elastic}} + \chi_{\text{inelastic}}$
+- $\epsilon$ is the kinetic mixing parameter  
+- $m_{A'}$ is the dark photon mass  
+- $\beta = \sqrt{1 - (m_{A'}/E_0)^2}$  
+- $\delta \sim \max\left(m_{A'}/E_0, \, m_e^2/m_{A'}^2, \, m_e/E_0\right)$  
+- $\chi = \chi_{\text{elastic}} + \chi_{\text{inelastic}}$
 
-The $\chi$ integrals are computed numerically over elastic and inelastic form factors.
+The $\chi$ integrals are computed numerically over elastic and inelastic form factors:
+
+
+### Elastic $\chi_{\text{elastic}}$ Integral:
+
+$$
+\chi_{\text{elastic}} = \int_{t_{\min}}^{t_{\max}} \frac{F_{\text{el}}^2(t)}{t} \, dt
+$$
+
+with:
+
+$$
+F_{\text{el}}(t) = \frac{Z}{1 + t / t_a}, \quad t_a \approx \left(111 Z^{-1/3}\right)^{-2}
+$$
+
+
+### Inelastic $\chi_{\text{inelastic}}$ Integral:
+
+$$
+\chi_{\text{inelastic}} = \int_{t_{\min}}^{t_{\max}} \frac{F_{\text{in}}^2(t)}{t} \, dt
+$$
+
+with:
+
+$$
+F_{\text{in}}(t) = \frac{Z}{1 + t / t_b}, \quad t_b \approx \left(773 Z^{-2/3}\right)^{-2}
+$$
+
+
 
 ## Yield Enhancement
 
