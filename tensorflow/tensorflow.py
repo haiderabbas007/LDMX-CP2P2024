@@ -1,6 +1,16 @@
 """
-This script fits noisy cubic ratio data using TensorFlow instead of curve_fit,
-and compares it visually with the true function and noisy data.
+This module defines a TensorFlow-based approach for fitting noisy synthetic data 
+generated from a cubic polynomial model, which is used in the analysis of dark photon 
+cross section ratios. It includes:
+
+- A data generator for noisy cubic data
+- A Keras-based `CubicFitModel` for learning the polynomial coefficients
+- A training loop using the Adam optimizer
+- Output of predictions to file
+- Visualization comparing the learned fit with noisy and true data
+
+This script is meant to serve as a replacement for `scipy.optimize.curve_fit` in noisy 
+polynomial regression tasks, particularly within the context of physics simulations.
 """
 
 import numpy as np
