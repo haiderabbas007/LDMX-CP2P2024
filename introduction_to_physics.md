@@ -1,4 +1,5 @@
-# Light Dark Matter Experiment
+# Light Dark Matter Experiment (LDMX)
+![image](https://github.com/user-attachments/assets/f2d9aecc-eb34-4b46-8603-723835968d44)
 
 ## Introduction
 
