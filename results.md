@@ -1,4 +1,4 @@
-# Results
+# Results and Analysis
 
 The analytical and simulation-based models for dark photon production cross sections were compared using yield enhancements and cross section ratios. These comparisons were used to derive correction factors that align the semi-analytical model with detailed Geant4/MadGraph simulations.
 
@@ -112,7 +112,7 @@ values.
 
 ---
 
-## 4. Cross Section Ratio \( \kappa \) and Correction Factor \( f_\kappa \) (Equations 5, 6, 7; Figures 10–13)
+## 4. Cross Section Ratio $\( \kappa \)$ and Correction Factor $\( f_\kappa \)$
 
 The **cross section ratio** compares total cross sections from simulation and code:
 
@@ -120,31 +120,63 @@ $$
 \kappa = \frac{\sigma_{X,E}^{\text{sim}}}{\sigma_{X,E}^{\text{code}}}
 $$
 
-This ratio is modeled by a cubic polynomial:
+This ratio is fitted to a cubic polynomial:
 
 $$
 f_\kappa(m_{A'}, E) = p_0 + p_1 (1000\,m_{A'}) + p_2 (1000\,m_{A'})^2 + p_3 (1000\,m_{A'})^3
-\tag{6}
 $$
 
-Each \( p_i \) is a quadratic function of energy:
+Each $p_i$ is parameterized as a quadratic function of energy to construct $f_\kappa(m_{A'}, E)$
+
+where
 
 $$
-p_i(E) = \alpha_i E^2 + \beta_i E + \gamma_i
-\tag{7}
+\begin{aligned}
+p_0 &= (0.000500411)(E_0)^2 + (0.00146982)E_0 + (0.227914) \\
+p_1 &= (-7.82802 \times 10^{-7})(E_0)^2 + (4.05576 \times 10^{-6})E_0 + (-0.000146175) \\
+p_2 &= (-8.92938 \times 10^{-11})(E_0)^2 + (1.09391 \times 10^{-8})E_0 + (-2.57631 \times 10^{-8}) \\
+p_3 &= (1.14931 \times 10^{-13})(E_0)^2 + (-3.9934 \times 10^{-12})E_0 + (1.57416 \times 10^{-11})
+\end{aligned}
 $$
 
-Figure 10 shows the fitted curves for tungsten, and Figure 11 shows the energy dependence of the polynomial coefficients.  
-The resulting correction factor \( f_\kappa \) accurately predicts simulation cross sections when applied to the code-based model, as shown in Figure 12.
 
-> **Note:** As with \( f_\eta \), aluminum fits (Figure 13) were unstable, and future work is needed to build accurate correction factors for lighter target materials.
+Figure 8 shows the fitted curves for tungsten.
+
+![image](https://github.com/user-attachments/assets/90365745-99ab-4bf9-960c-95152ba24490)
+
+Figure 8: Cubic polynomial perfectly captures the behavior of the curves, paving way for parameterization.
+
+
+Figure 9 shows the energy dependence of the polynomial coefficients.
+
+![image](https://github.com/user-attachments/assets/9d0c4ff8-33b2-4108-bcaf-e1d67266f2f9)
+![image](https://github.com/user-attachments/assets/6a53460e-1206-4387-a4f9-75ad508523a7)
+![image](https://github.com/user-attachments/assets/5e46ca61-564e-4df3-bc3d-b95f7916e044)
+![image](https://github.com/user-attachments/assets/7da36941-8fca-4901-b619-8edc5f450b55)
+
+Figure 9: The parameters are plotted as functions of electron beam energy. Degree 2 polynomial fits are applied to obtain
+an analytical relationship for the evolution of parameters with energy.
+
+The resulting correction factor $\( f_\kappa \)$ accurately predicts simulation cross sections when applied to the code-based model, as shown in Figure 10.
+
+![image](https://github.com/user-attachments/assets/9e41a0fb-1e99-47b1-815f-a13cc8399ca3)
+
+Figure 10: Cross Section ratios / f have been plotted along with the uncertainties.
+
+It can be seen from the graph in Figure 10 that the ratio of cross sections to the correction factor neatly converges to 1, verifying the reliability of the correction factor. This factor can therefore be applied to cross-section values from the code to predict the actual cross-sections to a high degree of accuracy.
+
+> **Note:** As with $\( f_\eta \)$, aluminum fits (Figure 11) were unstable, and future work is needed to build accurate correction factors for lighter target materials.
+
+![image](https://github.com/user-attachments/assets/595f2317-03d0-4dd4-9562-1cc4de8e78cd)
+Figure 11: Degree 3 fits applied to Aluminium curves do not capture their evolution precisely enough, especially at higher mass
+values.
 
 ---
 
 ## Summary
 
-- **Correction factors \( f_\eta \) and \( f_\kappa \)** successfully map analytical predictions to simulation results for tungsten.
+- **Correction factors $\( f_\eta \)$ and $\( f_\kappa \)$** successfully map analytical predictions to simulation results for tungsten.
 - **Quartic and cubic fits** are validated against numerical data and exhibit strong convergence to unity when applied.
 - **Limitations for aluminum** remain due to poor fit quality at higher dark photon masses.
 
-These correction models enable **fast and accurate cross section predictions** across a broad parameter space, significantly improving the practical utility of the semi-analytical approach in upcoming LDMX studies.
+These correction models enable **fast and accurate cross-section predictions** across a broad parameter space, significantly improving the practical utility of the semi-analytical approach in upcoming LDMX studies.
