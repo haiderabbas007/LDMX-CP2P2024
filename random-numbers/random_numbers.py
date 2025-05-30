@@ -1,6 +1,6 @@
-# generate_random_data.py
+# random_numbers.py
 # This script can also be imported in the main Dark Photon script using:
-# from generate_random_data import generate_noisy_ratio_data
+# from random_numbers import generate_noisy_ratio_data
 """
 This script generates synthetic noisy data for testing curve fitting routines
 in the Dark Photon cross section analysis project.
