@@ -15,6 +15,21 @@ Both methods were tested on the same dataset:
 * True model: Cubic function with coefficients `[1.0, -0.01, 0.0002, -1e-6]`
 * Noise: Gaussian with standard deviation 0.05
 
+## Code Snippet (TensorFlow Version)
+
+```python
+class CubicFitModel(tf.keras.Model):
+    def __init__(self):
+        super().__init__()
+        self.a = tf.Variable(1.0, dtype=tf.float32)
+        self.b = tf.Variable(-0.01, dtype=tf.float32)
+        self.c = tf.Variable(0.0002, dtype=tf.float32)
+        self.d = tf.Variable(-1e-6, dtype=tf.float32)
+
+    def call(self, x):
+        return self.a + self.b * x + self.c * x**2 + self.d * x**3
+```
+
 ## Metrics for Comparison
 
 1. **Visual Accuracy**: Fit curve compared to the true curve and noisy data
