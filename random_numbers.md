@@ -6,7 +6,7 @@ This module provides a Python utility script for generating **synthetic noisy da
 
 ## Purpose
 
-The script `generate_random_data.py` produces realistic, noisy ratio data mimicking the form of cross section ratios (e.g., simulation/code, double ratio corrections). This allows you to:
+The script `random_numbers.py` produces realistic, noisy ratio data mimicking the form of cross section ratios (e.g., simulation/code, double ratio corrections). This allows you to:
 
 * Validate curve fitting algorithms,
 * Benchmark polynomial fitting procedures,
