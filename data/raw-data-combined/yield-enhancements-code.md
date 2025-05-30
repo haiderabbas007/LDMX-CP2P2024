@@ -1,4 +1,4 @@
-# Dark Photon Yield Enhancement Factors
+# Dark Photon Yield Enhancement (Python Code)
 
 Simulated yield enhancement factors for dark photon production, categorized by target material and beam energy.
 
