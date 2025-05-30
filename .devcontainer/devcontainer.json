@@ -1,0 +1,11 @@
+{
+  "name": "Dark Photon Analysis",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "settings": {},
+  "extensions": [],
+  "postCreateCommand": "echo 'Dev container ready!'",
+  "forwardPorts": []
+}
